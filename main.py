@@ -1,3 +1,7 @@
+from time import sleep
+import os
+
+
 print("Welcome to secret auction program.")
 
 bidders = {}
@@ -22,7 +26,12 @@ while bid_flag is False:
     more = input('Are there any other bidders? Type "yes" or "no"').lower()
     if more != "yes":
         bid_flag = True
-
+    else:
+        sleep(0.5)
+        if os.name == 'posix':
+            os.system('clear')
+        else:
+            os.system('cls')
 if bidders:
     good_bid = 0
     bid_name = ""
